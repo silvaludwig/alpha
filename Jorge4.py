@@ -48,13 +48,13 @@ class Love:
 
 #script de dialogo# 
 
-#user_intro = Intro()
+user_intro = Intro()
 
-#user_name = Name()
+user_name = Name()
 
-#user_age = Age()
+user_age = Age()
     
-#user_job = Job()
+user_job = Job()
 
 user_love = Love()
 
