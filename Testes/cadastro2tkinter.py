@@ -46,24 +46,6 @@ def new_user():
         elif address_country.isdigit():
             messagebox.showerror('Attention!', 'Invalid Country!')
             address_country_entry.delete(0, END)
-
-# #validating if Gender is in M or F:
-#     elif gender not in 'MmFf':
-#         messagebox.showerror('Attention!', 'Invalid Gender!')
-#         gender_entry.delete(0, END)
-
-# # validating months:
-#     elif birth_month not in '1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12':
-#         messagebox.showerror('Attention!', 'Invalid Month!')
-#         birth_month_entry.delete(0, END)
-    
-# # validating feb with 28 days
-#     elif birth_month in '2':
-#         if birth_day not in '1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28':
-#             messagebox.showerror('Attention!', 'Feb only have 28 days!')
-#             birth_day_entry.delete(0, END)
-#         else:
-#             exit
             
     else:
         messagebox.showinfo('System', 'Registered successfuly!')
@@ -90,8 +72,6 @@ janela = Tk()
 janela.title('Personal Info')
 moldura = ttk.Frame(janela, padding=10)
 moldura.grid()
-# ttk.Label(moldura, text='Teste de criação de interface').grid(column=0, row=0)
-
 
 # labels and entrys
 first_name_label = ttk.Label(janela, text='First Name')
@@ -115,7 +95,7 @@ days_var = tkinter.StringVar()
 days = ttk.Combobox(janela, width=5, textvariable=days_var, values=days_options)
 days.grid(column=6, row=0)
 
-# creating a combobox for the month
+# creating a combobox for month, year and gender
 month_label = ttk.Label(janela, text= 'Month')
 month_label.grid(column=7, row=0)
 
@@ -130,41 +110,19 @@ birth_year_label.grid(column=9, row=0)
 birth_year_entry = ttk.Entry(janela, width=7)
 birth_year_entry.grid(column=10, row=0)
 
-
 gender_label = ttk.Label(janela, text='Gender')
 gender_label.grid(column=0, row=2, padx=10, pady=5)
 
-# creating a combobox for Gender
 gender_options = ['Male', 'Female']
 gender_var = tkinter.StringVar()
 gender = ttk.Combobox(janela, textvariable=gender_var, values=gender_options)
 gender.grid(column=1, row=2)
-
-# gender_entry = ttk.Entry(janela)
-# gender_entry.grid(column=1, row=2, padx=10, pady= 5)
 
 job_label = ttk.Label(janela, text='Job')
 job_label.grid(column=2, row=2, padx=10, pady=5)
 
 job_entry = ttk.Entry(janela)
 job_entry.grid(column=3, row=2, padx=10, pady=5)
-
-
-# birthday_label = ttk.Label(janela, text= 'Birthday')
-# birthday_label.grid(column=4, row=0)
-
-# birth_day_label = ttk.Label(janela)
-# birth_day_label.grid(column=0, row=4, padx=10, pady=5)
-
-# birth_day_entry = ttk.Entry(janela, width=5)
-# birth_day_entry.grid(column=1, row=4, padx=5, pady=5)
-
-# birth_month_label = ttk.Label(janela)
-# birth_month_label.grid(column=2, row=4, padx=10, pady=5)
-
-# birth_month_entry = ttk.Entry(janela, width=5)
-# birth_month_entry.grid(column=2, row=4, padx=5, pady=5)
-
 
 address_first_line_label = ttk.Label(janela, text = 'Address')
 address_first_line_label.grid(column=0, row=5, padx=10, pady=5)
@@ -221,15 +179,11 @@ def clear_form():
     phone_number_entry.delete(0, END)
     email_entry.delete(0, END)
 
-
-
-# clear form button
+# clear end quit buttons
 clear_button = ttk.Button(janela, text='Clear', command=clear_form)
 clear_button.grid(column=2, row=12)
 
 quit_button = ttk.Button(janela, text='Quit', command=janela.destroy)
 quit_button.grid(column=3, row=12)
-
-# ttk.Button(janela, text='Fim do programa', command=janela.destroy).grid(column=0, row=2)
 
 janela.mainloop()
