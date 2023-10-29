@@ -104,45 +104,32 @@ def rotina_semanal():
     sleep(2)
     preenchimento_dados()
     sleep(2)
-    pagina_anterior()
-    sleep(2)
 
-# ultima quinta feira outubro
-def outubro():
+def mes_anterior():
     navegador.find_element('xpath', '//*[@id="show-datepicker"]').click()
-    navegador.find_element('xpath', '//*[@id="select-delivery-date-input"]/div/table/tbody/tr[4]/td[5]/a').click()
-
-# ultima quinta feira setembro
-def setembro():
-    navegador.find_element('xpath', '//*[@id="show-datepicker"]').click()
+    sleep(1)
     navegador.find_element('xpath', '//*[@id="select-delivery-date-input"]/div/div/a[1]').click()
+    sleep(1)
     navegador.find_element('xpath', '//*[@id="select-delivery-date-input"]/div/table/tbody/tr[5]/td[5]/a').click()
 
-# ultima quinta feira agosto
-def agosto():
-    navegador.find_element('xpath', '//*[@id="show-datepicker"]').click()
-    navegador.find_element('xpath', '//*[@id="select-delivery-date-input"]/div/div/a[1]').click()
-    navegador.find_element('xpath', '//*[@id="select-delivery-date-input"]/div/table/tbody/tr[5]/td[5]/a').click()
 
 login()
 sleep(2)
 aulas()
 sleep(2)
-outubro()
+rotina_semanal()
+rotina_semanal()
+rotina_semanal()
+rotina_semanal()
+sleep(2)
+mes_anterior()
 sleep(2)
 rotina_semanal()
 rotina_semanal()
 rotina_semanal()
 rotina_semanal()
 sleep(2)
-setembro()
-sleep(2)
-rotina_semanal()
-rotina_semanal()
-rotina_semanal()
-rotina_semanal()
-sleep(2)
-agosto()
+mes_anterior()
 sleep(2)
 rotina_semanal()
 rotina_semanal()
