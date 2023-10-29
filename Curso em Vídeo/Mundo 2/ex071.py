@@ -1,31 +1,77 @@
-import tkinter as tk
-from tkinter import ttk
+#exemplo expense management chat GPT
 
-def select_day():
-    select_day = combo_var.get()
+class Income:
+    def __init__(self, source, amount, account):
+        self.source = source
+        self.amount = amount
+        self.account = account
 
-def select_month():
-    select_month = combo_var.get()
+class Expense:
+    def __init__(self, category, amount, account):
+        self.category = category
+        self.amount = amount
+        self.account = account
 
-def select_year():
-    select_year = combo_var.get()
+class Category:
+    def __init__(self, name):
+        self.name = name
 
-# Create the main application window
-root = tk.Tk()
-root.title("Select Menu Example")
+class BankAccount:
+    def __init__(self, name, balance):
+        self.name = name
+        self.balance = balance
 
-# Create a Combobox widget
-options = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
-combo_var = tk.StringVar()
-combo = ttk.Combobox(root, textvariable=combo_var, values=options)
-combo.grid(row=1, column=0, padx=10, pady=10)
+class FinancialManager:
+    def __init__(self):
+        self.incomes = []
+        self.expenses = []
+        self.categories = []
+        self.bank_accounts = []
 
-# Create a button to get the selected option
-get_option_button = ttk.Button(root, text="Get Selected Option", command=select_day)
-get_option_button.grid(row=2, column=0, padx=10, pady=10)
+    def add_income(self, source, amount, account):
+        income = Income(source, amount, account)
+        self.incomes.append(income)
 
-# Create a label to display the selected option
-selected_option_label = ttk.Label(root, text="Day")
-selected_option_label.grid(row=0, column=0, padx=10, pady=10)
+    def add_expense(self, category, amount, account):
+        expense = Expense(category, amount, account)
+        self.expenses.append(expense)
 
-root.mainloop()
+    def add_category(self, name):
+        category = Category(name)
+        self.categories.append(category)
+
+    def add_bank_account(self, name, balance):
+        account = BankAccount(name, balance)
+        self.bank_accounts.append(account)
+
+    def display_incomes(self):
+        print("Income Entries:")
+        for income in self.incomes:
+            print(f"Source: {income.source}, Amount: ${income.amount}, Account: {income.account}")
+
+    def display_expenses(self):
+        print("Expense Entries:")
+        for expense in self.expenses:
+            print(f"Category: {expense.category}, Amount: ${expense.amount}, Account: {expense.account}")
+
+    def display_categories(self):
+        print("Categories:")
+        for category in self.categories:
+            print(category.name)
+
+    def display_bank_accounts(self):
+        print("Bank Accounts:")
+        for account in self.bank_accounts:
+            print(f"Account: {account.name}, Balance: ${account.balance}")
+
+# Example usage
+manager = FinancialManager()
+manager.add_bank_account("Savings", 1000)
+manager.add_bank_account("Checking", 500)
+manager.add_category("Groceries")
+manager.add_income("Salary", 3000, "Savings")
+manager.add_expense("Groceries", 100, "Checking")
+manager.display_bank_accounts()
+manager.display_categories()
+manager.display_incomes()
+manager.display_expenses()

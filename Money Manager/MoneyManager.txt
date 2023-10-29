@@ -1,4 +1,4 @@
-# Financial Management app #
+ Financial Management app 
 
 # BF - Basic Functionalities #
 # 1 - incomes
