@@ -22,7 +22,17 @@ body {
 
 .photos {
     border: 10px groove rgb(204, 185, 175);
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
 }
+
+.center {
+    margin: auto;
+    width: 65%;
+     /* border: 3px solid green; */
+    padding: 10px;
+  }
 
 a {
     color: #4b566a;
