@@ -1,0 +1,2 @@
+Log Error: Qualquer coisa (LogFileMixin)
+Log Success: Bom demais (LogFileMixin)
