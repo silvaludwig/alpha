@@ -11,4 +11,3 @@ nomes = ['Maria', 'Joao', 'Pedro', 'Cleber']
 for nome in nomes:
     print(bom_dia(nome))
     print(boa_noite(nome))
-
