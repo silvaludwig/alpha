@@ -36,3 +36,4 @@ if cpf == cpf_gerado:
     print(f'o cpf: <{cpf}> é válido')
 else:
     print(f'o cpf: <{cpf}> NÃO é válido')
+    
