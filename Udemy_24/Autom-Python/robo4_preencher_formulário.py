@@ -1,17 +1,20 @@
-import pyautogui
 from time import sleep
+import pyautogui
 from selenium import webdriver
 from openpyxl import load_workbook
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+import os
+
+os.environ['DISPLAY'] = ':0'
 
 
 servico = Service(ChromeDriverManager().install())
 navegador = webdriver.Chrome(service=servico)
 
-caminho_arquivo = 'C:\\Users\\Ludwig\\Desktop\\git-repo\\alpha\\Udemy_24\\Autom-Python\\preencherformulario.xlsx'
+caminho_arquivo = '/home/ludwig/Desktop/alpha/Udemy_24/Autom-Python/preencherformulario.xlsx'
 planilha = load_workbook(caminho_arquivo)
 pagina_login = planilha['dados_login']
 pagina_formulario_amarela = planilha['formulario_amarela']
@@ -24,7 +27,7 @@ print(pagina_login['A2'].value)
 print(pagina_login['B2'].value)
 
 
-navegador.get('https://institutoalexa.paineldoaluno.com.br/professor_login') # abrir o site
+navegador.get('https://institutoalexa.paineldoaluno.com.br/professor_login') # abrir o sitep
 sleep(2)
 navegador.find_element('xpath', '//*[@id="usuario"]').send_keys(pagina_login['A2'].value) # fazendo login pegando dados na planilha
 navegador.find_element('xpath', '//*[@id="senha"]').send_keys(pagina_login['B2'].value) # fazendo login pegando dados na planilha
@@ -261,6 +264,24 @@ def semana_completa():
     navegador.find_element(By.XPATH, '//*[@id="Capa_1"]').click() # clica em voltar pro dia de aula anterior, que no caso vai levar pra quarta feira de novo
     sleep(3)
 
+semana_completa()
+semana_completa()
+semana_completa()
+semana_completa()
+semana_completa()
+semana_completa()
+semana_completa()
+semana_completa()
+semana_completa()
+semana_completa()
+semana_completa()
+semana_completa()
+semana_completa()
+semana_completa()
+semana_completa()
+semana_completa()
+semana_completa()
+semana_completa()
 semana_completa()
 
 # fecha a janela e encerra o processo
