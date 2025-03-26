@@ -25,3 +25,4 @@ cujo valor é único pra cada registro. Isso garante que cada regustro possa ser
 No exemplo da tabela 'Clientes', o campo 'ID' pode ser a chave primaria. Garante a unicidade dos registros. 
 
 
+-DBAPI
