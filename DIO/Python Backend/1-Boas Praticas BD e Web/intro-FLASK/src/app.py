@@ -39,7 +39,7 @@ class User(db.Model):
 
 
     def __repr__(self):
-        return f"User(id={self.id!r}, username={self.username!r}, active={self.active!r})"
+        return f"User(id={self.id!r}, username={self.username!r})"
 
 
 class Post(db.Model):
@@ -67,7 +67,7 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
-        SQLALCHEMY_DATABASE_URI='sqlite:///dio-blog.sqlite',
+        SQLALCHEMY_DATABASE_URI='sqlite:///blog-dio.sqlite',
         JWT_SECRET_KEY= "super-secret",
     )
 

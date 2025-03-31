@@ -39,7 +39,7 @@ def list_or_create_user():
     user_id = get_jwt_identity()
     user = db.get_or_404(User, user_id)
     if user.role.name != 'admin':
-        return {'message': "USer don't have access."}, HTTPStatus.FORBIDDEN
+        return {'message': "User don't have access."}, HTTPStatus.FORBIDDEN
     if request.method == "POST":
         _create_user()
         return {"message": "created user"}, HTTPStatus.CREATED
